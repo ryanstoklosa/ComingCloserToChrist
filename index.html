@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive exploration of Christ-centered words and themes across the books of the Book of Mormon.">
+  <title>Coming Closer to Christ</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">A Book of Mormon word study</p>
+      <h1>Coming Closer to Christ</h1>
+      <p class="subtitle">An exploration of Christ-centered words and themes across the books of the Book of Mormon.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="about-title">
+      <h2 id="about-title">About this project</h2>
+      <p>This project explores how Christ-centered themes appear across the books of the Book of Mormon. 
+        I used AntConc to search for selected words, organized and compared the results in Excel, 
+        and used Tableau Public to create interactive visualizations. Rates per 10,000 words help compare books of 
+        different lengths; higher values show that a searched word or theme appears more often relative to a book’s 
+        length. These patterns show word frequency, while the meaning of each term still depends on its context.</p>
+      <p>As I worked on this project, I came to see how Christ truly is the central theme of the Book of Mormon. 
+        I appreciated being able to see the recurring themes of this powerful book. 
+        I especially appreciated how present Christ is in each section.</p>
+      <p class="callout">The visualizations compare search-term frequencies. Rates are normalized per 1,000 words so books of different lengths can be compared.</p>
+    </section>
+
+    <section class="visualizations" aria-label="Project visualizations">
+      <div class="chart-tabs" role="tablist" aria-label="Choose a visualization">
+        <button class="chart-tab" id="tab-heatmap" type="button" role="tab" aria-selected="true" aria-controls="panel-heatmap">Theme heatmap</button>
+        <button class="chart-tab" id="tab-bubbles" type="button" role="tab" aria-selected="false" aria-controls="panel-bubbles" tabindex="-1">1 Nephi themes</button>
+        <button class="chart-tab" id="tab-trend" type="button" role="tab" aria-selected="false" aria-controls="panel-trend" tabindex="-1">Theme rates by book</button>
+      </div>
+
+      <section class="chart-panel" id="panel-heatmap" role="tabpanel" aria-labelledby="tab-heatmap" tabindex="0">
+        <h2>Book of Mormon theme heatmap</h2>
+        <p class="chart-description">Darker colors indicate more prominent themes.</p>
+        <div class="viz-frame" data-viz="heatmap" aria-live="polite">
+          <p class="loading-message">Loading visualization…</p>
+        </div>
+      </section>
+
+      <section class="chart-panel" id="panel-bubbles" role="tabpanel" aria-labelledby="tab-bubbles" tabindex="0" hidden>
+        <h2>Themes in 1 Nephi</h2>
+        <p class="chart-description">Color and size show each theme’s rate per 10,000 words.</p>
+        <div class="viz-frame" data-viz="one-nephi" aria-live="polite">
+          <p class="loading-message">This chart loads when you open this tab.</p>
+        </div>
+      </section>
+
+      <section class="chart-panel" id="panel-trend" role="tabpanel" aria-labelledby="tab-trend" tabindex="0" hidden>
+        <h2>Theme rates across Book of Mormon books</h2>
+        <p class="chart-description">Use the theme dropdown in the chart to choose which theme to view.</p>
+        <div class="viz-frame" data-viz="theme-rates" aria-live="polite">
+          <p class="loading-message">This chart loads when you open this tab.</p>
+        </div>
+      </section>
+    </section>
+
+    <section class="method" aria-labelledby="method-title">
+      <h2 id="method-title">Learn More</h2>
+      <p>To learn more about the Book of Mormon and its message, please visit the following website: </p>
+      <p><a href="https://www.churchofjesuschrist.org/study/scriptures/bofm?lang=eng" target="_blank" rel="noopener noreferrer">Book of Mormon</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Created by Ryan Stoklosa · Data visualizations hosted on Tableau Public</p>
+  </footer>
+</body>
+</html>
